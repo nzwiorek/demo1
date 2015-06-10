@@ -1,0 +1,42 @@
+$font-stack: Roboto, Helvetica, sans-serif;
+$primary-color: #333;
+$secondary-color: #FFF;
+$shadow: 0px 1px 3px rgba(0,0,0,0.3);
+
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	-o-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+.white-box {
+	@include box-shadow($shadow);
+	background-color: $secondary-color;
+}
+
+
+/* Basics */
+
+body {
+  font: 16px/1.5 $font-stack;
+  color: $primary-color;
+}
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+	@include box-shadow($shadow);
+	background-color: $secondary-color;
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
