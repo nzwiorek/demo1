@@ -132,6 +132,33 @@ th {
     visibility: hidden;
 }
 
+.locklayer {
+    display: none;
+}
+
+.page {
+    position: relative;
+}
+
+body.offcanvas-in .offcanvas {
+    visibility: visible;
+}
+
+body.offcanvas-in .page {
+    -webkit-transform: translateX(260px); 
+}
+
+body.offcanvas-in .locklayer {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
 /* Header */
 
 header[role=banner] {
@@ -150,15 +177,40 @@ header[role=banner] {
     height: auto;
 }
 
-.toggle-mobile-nav {
-    /*display: none;*/
+.toggle-nav-mobile {
+    display: none;
+    margin-top: 15px;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+    .toggle-nav-mobile {
+        display: block;
+    }
+
+    .nav-primary ul {
+        display: none;
+    }
+
+    .logo {
+        float: right;
+    }
 }
 
 .icon-burger {
-    position: relative;
-    width: 44px;
-    height: 44px;
+    position: absolute;
+    width: 24px;
+    height: 20px;
     display: inline-block;
+    left: 50%;
+    top: 50%;
+    margin-left: -12px;
+    margin-top: -10px;
 }
 
 .icon-burger .bar {
@@ -190,6 +242,15 @@ header[role=banner] {
     text-transform: uppercase;
     padding: 10px;
     display: block;
+}
+
+.nav-mobile li {
+    display: block;
+}
+
+.nav-mobile a {
+    display: block;
+    padding: 10px 20px;
 }
 
 figure {
